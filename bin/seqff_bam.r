@@ -58,8 +58,10 @@ ff.pred <- function(gc.norm.bc.61927, B, mu, parameter.1, parameter.2){
 }
 ####################################################################################################################################################
 calculate_ff <- function(bam,output){
-  load("SupplementalFile1.RData")
-  bininfo = read.csv("SupplementalTable2.csv")
+  suppl_dat <- system.file("extdata", "SupplementalFile1.RData", package = "seqffBAM")
+  load(suppl_dat)
+  suppl_table <- system.file("extdata", "SupplementalTable2.csv", package = "seqffBAM")
+  bininfo = read.csv(suppl_table)	
   colnames(bininfo)[1]="binName"
   bininfo$binorder=c(1:61927)
 
